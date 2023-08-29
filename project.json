@@ -1,0 +1,6 @@
+{
+    "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.project.v1",
+    "type": "project",
+    "id": "sleepy-monax/p5k",
+    "description": "A minimalist risc-v kernel"
+}

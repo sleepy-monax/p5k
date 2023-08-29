@@ -1,0 +1,6 @@
+--target=riscv32
+-std=c2x
+-Wall
+-Wextra
+-Werror
+-I.

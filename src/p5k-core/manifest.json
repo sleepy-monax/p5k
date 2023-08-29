@@ -1,0 +1,9 @@
+{
+    "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.component.v1",
+    "type": "exe",
+    "id": "p5k-core",
+    "requires": [
+        "riscv",
+        "sbi"
+    ]
+}

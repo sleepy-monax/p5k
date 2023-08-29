@@ -1,0 +1,73 @@
+{
+    "$schema": "https://schemas.cute.engineering/stable/cutekit.manifest.target.v1",
+    "id": "riscv32-kernel",
+    "type": "target",
+    "props": {
+        "toolchain": "clang",
+        "arch": "riscv32",
+        "bits": "32",
+        "sys": "kernel",
+        "abi": "sysv",
+        "encoding": "utf8",
+        "freestanding": true,
+        "host": false
+    },
+    "tools": {
+        "cc": {
+            "cmd": [
+                "@latest",
+                "clang"
+            ],
+            "args": [
+                "--target=riscv32",
+                "-nostdlib",
+                "-ffreestanding"
+            ]
+        },
+        "cxx": {
+            "cmd": [
+                "@latest",
+                "clang++"
+            ],
+            "args": [
+                "--target=riscv32",
+                "-nostdlib",
+                "-ffreestanding"
+            ]
+        },
+        "ld": {
+            "cmd": [
+                "@latest",
+                "clang"
+            ],
+            "args": [
+                "--target=riscv32",
+                "-nostdlib",
+                "-ffreestanding",
+                "-Wl,-Tmeta/targets/riscv32-kernel.ld"
+            ],
+            "files": [
+                "meta/targets/kernel-x86_64.ld"
+            ]
+        },
+        "ar": {
+            "cmd": [
+                "@latest",
+                "llvm-ar"
+            ],
+            "args": [
+                "rcs"
+            ]
+        },
+        "as": {
+            "cmd": [
+                "@latest",
+                "clang"
+            ],
+            "args": [
+                "--target=riscv32",
+                "-c"
+            ]
+        }
+    }
+}
